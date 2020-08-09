@@ -21,11 +21,9 @@ public class Solution {
                 stack.push(root);
                 root = root.left;
             }
-            if (!stack.isEmpty()) {
-                root = stack.pop();
-                ans.add(root.val);
-                root = root.right;
-            }
+            root = stack.pop();
+            ans.add(root.val);
+            root = root.right;
         }
         return ans;
     }
