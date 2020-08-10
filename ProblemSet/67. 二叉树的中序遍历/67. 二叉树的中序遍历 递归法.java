@@ -20,9 +20,9 @@ public class Solution {
 
     public void traverse(TreeNode root) {
         if (root != null) {
-            inorderTraversal(root.left);
+            traverse(root.left);
             ans.add(root.val);
-            inorderTraversal(root.right);
+            traverse(root.right);
         }
     }
 }
