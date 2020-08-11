@@ -18,11 +18,10 @@ public class Solution {
         return ans;
     }
 
-    public void traverse(TreeNode root) {
-        if (root != null) {
-            traverse(root.left);
-            ans.add(root.val);
-            traverse(root.right);
-        }
+    private void traverse(TreeNode root) {
+        if (root == null) return;
+        traverse(root.left);
+        ans.add(root.val);
+        traverse(root.right);
     }
 }
