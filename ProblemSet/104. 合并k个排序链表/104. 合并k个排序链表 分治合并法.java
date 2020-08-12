@@ -22,14 +22,12 @@ public class Solution {
      */
     public ListNode mergeKLists(List<ListNode> lists) {  
         if (lists == null || lists.size() == 0) return null;
-        int l = lists.size();
-        while (l > 1) {
-            int idx = 0;
-            for (int i = 0; i < l; i += 2) {
-                if (i == l - 1) lists.set(idx++, lists.get(i));
-                else lists.set(idx++, mergeTwoLists(lists.get(i), lists.get(i + 1)));
-            }
-            l = idx;
+        int amount = lists.size();
+        int interval = 1;
+        while (interval < amount) {
+            for (int i = 0; i < amount - interval; i += 2 * interval)
+                lists.set(i, mergeTwoLists(lists.get(i), lists.get(i + interval)));
+            interval *= 2;
         }
         return lists.get(0);
     }

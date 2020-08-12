@@ -19,6 +19,11 @@ import java.util.Queue;
  * }
  */ 
 public class Solution {
+    private Comparator<ListNode> listNodeComparator = new Comparator<ListNode>() {
+        public int compare(ListNode node1, ListNode node2) {
+            return node1.val - node2.val;
+        }
+    };
     /**
      * @param lists: a list of ListNode
      * @return: The head of one sorted list.
@@ -38,10 +43,4 @@ public class Solution {
         }
         return dummy.next;
     }
-
-    private Comparator<ListNode> listNodeComparator = new Comparator<ListNode>() {
-        public int compare(ListNode node1, ListNode node2) {
-            return node1.val - node2.val;
-        }
-    };
 }
