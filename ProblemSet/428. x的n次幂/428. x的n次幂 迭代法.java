@@ -12,9 +12,9 @@ public class Solution {
     private double fastPow(double x, long N) {
         double ans = 1.0, tmp = x;
         while (N > 0) {
-            if (N % 2 == 1) ans *= tmp;
+            if ((N & 1) == 1) ans *= tmp;
             tmp *= tmp;
-            N /= 2;
+            N >>= 1;
         }
         return ans;
     }
