@@ -6,11 +6,7 @@ public class Solution {
     public void sortIntegers2(int[] A) {
         heapSort(A);
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 1e7c6ca88d99bb5c35ad853537c8c7954ef14ee3
     private void heapSort(int[] nums) {
         for (int i = (nums.length >> 1) - 1; i >= 0; --i)
             maxHeapify(nums, i, nums.length);
